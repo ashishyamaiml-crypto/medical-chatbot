@@ -51,7 +51,7 @@ docsearch = PineconeVectorStore(pinecone_index, embeddings)
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 4})
 
 # -------------------- Load LLM --------------------
-chat_model = ChatOpenAI(model="gpt-3.5-turbo")
+chat_model = ChatOpenAI(model="gpt-4o", temperature=0.5)
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", system_prompt),
